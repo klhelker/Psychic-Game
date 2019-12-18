@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Letter Game</title>
+  </head>
+  <body>
+
+    <div class="jumbotron">
+      <h1 class="text-center">Hello, Player!</h1>
+      <p class="text-center">Pick a letter to play the game</p>
+      <hr class="my-4">
+      <p class="text-center"> You will get 5 chances to guess what letter I'm thinking of, otherwise AUF WIEDERSEHEN!</p>
+    </div>
+
+    <div>
+      <p id="instructions">Pick a letter to play the game!</p>
+      <p id="playerPick-text"></p>
+      <p id="computerPick-text"></p>
+      <p id="correctAnswer-text"></p<>
+      <p id="wrongAnswer-text"></p>
+      <p id="chancesLeft"></p>
+      
+    </div>
+
+    <script type = "text/javascript">
+
+      var computerPick = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+    
+      var wins = 0;
+      var losses = 0;
+      var chances = 0;
+
+      var instructions = document.getElementnById("instructions");
+      var playerPickText = document.getElementById("playerPick-text");
+      var computerPickText = document.getElementnById("computerPick-text");
+      var correctAnswerText = document.getElementnById("correctAnswer-text");
+      var wrongAnswerText = document.getElementnById("wrongAnswer-text");
+      var chancesLeft = document.getElementById("chancesLeft");
+      
+
+      document.onekeyup =function(event) {
+
+        var playerPick = event.key;
+
+        var computerPlay = computerPick[Math.floor(Math.random() * computerPick.length)];
+      
+      if ((playerPick === computerPick))
+      {
+      alert("Player won!");
+      }
+      else ("you lose!");
+      
+
+
+     playerPickText.textContent = "You picked: " + playerPick;
+     computerPlayText.textContent = "The computer chose: " + computer;
+     correctAnswerText.textContent = "Correct Answer";
+     wrongAnswerText.textContent = "Wrong Answer";
+     chancesLeft.textContent = "?"
+      
+      }
+      
+      //if player guesses correct answer 5 times player wins//
+      //every click takes 1 away from number of chances//
+      //number of chances = 10
+
+var counter = 0;
+$(".crystal-image").on("click", function() {
+
+      var count
+       // Here we establish the "targetNumber" (set to 50 in this example).
+      var targetNumber = 10;
+       $("#number-to-guess").text(targetNumber);
+
+      var counter = 0;
+        $(".crystal-image").on("click", function() {
+
+  
+  // for (var i = 0; i < alphabet.lengt
+      // h; i++) {
+      
+    
+    </script>
+    
+  </body>
+</html>
