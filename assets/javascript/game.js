@@ -5,43 +5,40 @@
     
     var wins = 0;
     var losses = 0;
-    var chances= 0;
     var guessesSoFar= 5;
-    
-    
+    var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
     document.onkeyup = function(event) {
 
       var userChoiceText = document.getElementById("userchoice-text");
       var computerChoiceText = document.getElementById("computerchoice-text");
       var winsText = document.getElementById("wins-text");
-      var lossesText = document.getElementById("losses-text");
-      var chancesText = document.getElementById("chances-text");
-      var guessesSoFar = document.getElementById("guessesSoFar-text");
+      var lossesText = document.getElementById("losses-text");  
+      var guessesText = document.getElementById("guessesSoFar-text");
   
       var userGuess = event.key;
-      
-      var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+         
+          if (userGuess === computerGuess) 
 
-         for (var i = 0; i < computerChoices.length; i++){
-
-          console.log(computerGuess);
-
-          if ((userGuess === computerGuess)) 
-
-          {  console.log(wins++);
+            { 
+              wins++;
           
-          } else {
-              
-              console.log(losses++ && chances --);                       
+          } else if (guessesSoFar === 0)
+             { 
+               losses ++;
           }
-        
-        userChoiceText.textContent = userGuess;
-        computerChoiceText.textContent = computerGuess;
-        winsText.textContent =  wins;
-        lossesText.textContent =  losses;
-        chancesText.textContent = chances;
-        guessesSOFar.textContent =  guessesSoFar;
 
-        }
-      }
+              else {
+                guessesSoFar --;
+          }
+
+            
+
+              console.log(guessesSoFar);
+        userChoiceText.textContent = "You picked " + userGuess;
+        computerChoiceText.textContent = "Computer picked " + computerGuess;
+        winsText.textContent = "You Won! " + wins;
+        lossesText.textContent =  "You Lost! " + losses;
+        guessesText.textContent =  "You have " + guessesSoFar + " left";
+          }
+
