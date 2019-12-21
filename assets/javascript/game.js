@@ -9,31 +9,31 @@
     var guessesSoFar= 5;
     
     
-    var userChoiceText = document.getElementById("userchoice-text");
-    var computerChoiceText = document.getElementById("computerchoice-text");
-    var winsText = document.getElementById("wins-text");
-    var lossesText = document.getElementById("losses-text");
-    var chancesText = document.getElementById("chances-text");
-    var guessesSoFar = document.getElementById("guessesSoFar-text");
 
     document.onkeyup = function(event) {
 
-      
+      var userChoiceText = document.getElementById("userchoice-text");
+      var computerChoiceText = document.getElementById("computerchoice-text");
+      var winsText = document.getElementById("wins-text");
+      var lossesText = document.getElementById("losses-text");
+      var chancesText = document.getElementById("chances-text");
+      var guessesSoFar = document.getElementById("guessesSoFar-text");
+  
       var userGuess = event.key;
       
       var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
-         for (var i = 0; i < computerChoice.length; i++){
+         for (var i = 0; i < computerChoices.length; i++){
 
           console.log(computerGuess);
 
           if ((userGuess === computerGuess)) 
 
-          {  console.log=(wins++);
+          {  console.log(wins++);
           
           } else {
               
-              console.log=(losses++ && chances --);                       
+              console.log(losses++ && chances --);                       
           }
         
         userChoiceText.textContent = userGuess;
@@ -44,3 +44,4 @@
         guessesSOFar.textContent =  guessesSoFar;
 
         }
+      }
