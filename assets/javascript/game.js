@@ -26,11 +26,11 @@
           if (userGuess === computerGuess) 
 
             { 
-              wins+=1;
+              wins++;
           
           } else if (guessesLeft === 0)
              { 
-               losses+=0;
+               losses++;
                alert("To play again, hit any button")
                guessesSoFar = [];
                guessesLeft=5;
