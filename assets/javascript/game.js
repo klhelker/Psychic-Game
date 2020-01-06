@@ -10,19 +10,21 @@
     var guessesSoFar = []
     
     document.onkeyup = function(event) {
-        console.log (guessesLeft);
+        
+      console.log (guessesLeft);
 
       var userChoiceText = document.getElementById("userchoice-text");
       var computerChoiceText = document.getElementById("computerchoice-text");
       var winsText = document.getElementById("wins-text");
       var lossesText = document.getElementById("losses-text");  
       var guessesText = document.getElementById("guessesLeft-text");
-     
-       var userGuess = event.key;
+      
+      var userGuess = event.key;
           guessesSoFar.push(userGuess);
           console.log (guessesSoFar);
           guessesLeft -=1;
-      
+          
+  
           if (userGuess === computerGuess) 
 
             { 
@@ -46,9 +48,11 @@
             
         
               
-        userChoiceText.textContent = "You picked " + userGuess;
+        userChoiceText.textContent = "You picked " + userGuess + ;
         computerChoiceText.textContent = "Computer picked " + computerGuess;
         winsText.textContent = "You Won! " + wins;
         lossesText.textContent =  "You Lost! " + losses;
         guessesText.textContent =  "You have " + guessesLeft + " chances left!";
+        guessesSoFar.textContent = "your guesses so far " + userGuess;
       }
+      
